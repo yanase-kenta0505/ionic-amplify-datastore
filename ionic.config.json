@@ -1,0 +1,7 @@
+{
+  "name": "ionic-amplify-datastore",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
