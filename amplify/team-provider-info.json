@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ionicamplifydatastor-dev-60828-authRole",
+      "UnauthRoleArn": "arn:aws:iam::642615880003:role/amplify-ionicamplifydatastor-dev-60828-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::642615880003:role/amplify-ionicamplifydatastor-dev-60828-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-ionicamplifydatastor-dev-60828-deployment",
+      "UnauthRoleName": "amplify-ionicamplifydatastor-dev-60828-unauthRole",
+      "StackName": "amplify-ionicamplifydatastor-dev-60828",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:642615880003:stack/amplify-ionicamplifydatastor-dev-60828/62216d20-3471-11ed-a9f5-0a4048f7bcc1",
+      "AmplifyAppId": "d3onolromt13e"
+    }
+  }
+}

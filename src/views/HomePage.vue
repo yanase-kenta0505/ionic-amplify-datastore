@@ -16,6 +16,8 @@
       <div id="container">
         <strong>Ready to create an app?</strong>
         <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+        <input type="text" v-model='title'/>
+        <button @click="create">create</button>
       </div>
     </ion-content>
   </ion-page>
@@ -23,7 +25,10 @@
 
 <script lang="ts">
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
+import { DataStore } from '@aws-amplify/datastore';
+import { Post } from '@/models';
+import { PostStatus } from '@/models';
 
 export default defineComponent({
   name: 'HomePage',
@@ -33,6 +38,29 @@ export default defineComponent({
     IonPage,
     IonTitle,
     IonToolbar
+  },
+  setup() {
+    const title = ref('')
+    const create = async () => {
+      await DataStore.save(
+      new Post({
+        title: title.value,
+        status: PostStatus.INACTIVE
+      })
+      )
+      title.value = ''
+    }
+
+
+    (async () => {
+      const posts = await DataStore.query(Post)
+      console.log(posts[0].id)
+    })()
+
+    return {
+      title,
+      create
+    }
   }
 });
 </script>
